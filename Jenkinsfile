@@ -6,7 +6,7 @@ pipeline {
 
         IMAGE_NAME = "openknot-gateway"
         CONTAINER_NAME = "openknot-gateway"
-        APP_PORT = "8080"
+        APP_PORT = "8000"
         SPRING_PROFILES_ACTIVE = "prod"
     }
 
