@@ -2,8 +2,10 @@ pipeline {
     agent any
 
     environment {
+        JWT_SECRET = credentials('JWT_SECRET')
+
         IMAGE_NAME = "openknot-gateway"
-        CONTAINER_NAME = "openknot-user-service"
+        CONTAINER_NAME = "openknot-gateway"
         APP_PORT = "8080"
         SPRING_PROFILES_ACTIVE = "prod"
     }
@@ -45,9 +47,7 @@ pipeline {
                       --name ${CONTAINER_NAME} \
                       -p ${APP_PORT}:${APP_PORT} \
                       -e SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE} \
-                      -e DB_URL=${DB_URL} \
-                      -e DB_USERNAME=${DB_USERNAME} \
-                      -e DB_PASSWORD=${DB_PASSWORD} \
+                      -e JWT_SECRET=${JWT_SECRET} \
                       --restart unless-stopped \
                       ${IMAGE_NAME}:latest
                 """
