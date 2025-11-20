@@ -7,13 +7,13 @@ enum class RouteInfo(
 ) {
 
     AUTH_SERVICE(
-        uri = "http://127.0.0.1:8081",
+        uri = "http://openknot-auth-service:8081",
         path = "/auth/**",
         stripPrefix = 2,
     ),
 
     USER_SERVICE(
-        uri = "http://127.0.0.1:8082",
+        uri = "http://openknot-user-service:8082",
         path = "/users/**",
         stripPrefix = 2,
     ),
