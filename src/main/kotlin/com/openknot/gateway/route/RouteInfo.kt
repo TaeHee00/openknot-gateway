@@ -8,13 +8,13 @@ enum class RouteInfo(
 
     AUTH_SERVICE(
         uri = "http://127.0.0.1:8081",
-        path = "/api/auth/**",
+        path = "/auth/**",
         stripPrefix = 2,
     ),
 
     USER_SERVICE(
         uri = "http://127.0.0.1:8082",
-        path = "/api/users/**",
+        path = "/users/**",
         stripPrefix = 2,
     ),
 
