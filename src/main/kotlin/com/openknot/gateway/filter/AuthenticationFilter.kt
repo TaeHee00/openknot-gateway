@@ -28,9 +28,16 @@ class AuthenticationFilter(
         private val logger = KotlinLogging.logger { }
         // TODO: 나중에 yml 파일로 빼기
         private val whitelistEndpoint = listOf(
-            "/users/register",
+            // Auth Service
             "/auth/login",
+            "/auth/register",
             "/auth/refresh",
+            "/auth/github",
+            "/auth/github/callback",
+            // User Service
+            "/users/create",
+            "/users/validate-credentials",
+            "/users/email-exists",
         )
     }
 
